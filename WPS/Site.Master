@@ -1,0 +1,138 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="WPS.Site" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <%--<link rel="stylesheet" href="Bootstrap/bootstrap.min.css" />
+    <script src="Bootstrap/jquery.min.js"></script>
+    <script src="Bootstrap/bootstrap.min.js"></script>--%>
+
+    <link rel="stylesheet" href="CSS/NavStyle.css" type="text/css" />
+    <link rel="stylesheet" href="CSS/Master.css" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet" />
+    
+    <script>
+        $(document).ready(function () {
+            var h = $("#navbar").outerHeight();
+            $('#header').css('margin-top', h);
+        });
+    </script>
+    
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <div class="container-fluid">
+            <div class="row">
+                <nav class="navbar navbar-default navbar-fixed-top" id="navbar">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a href="Default.aspx">
+                                <img src="Images/logosmall.png" class="logo-small img-responsive" />
+                            </a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="myNavbar">
+                            <ul class="nav navbar-nav">
+                                <li class="active">
+                                    <asp:HyperLink runat="server" NavigateUrl="~/Default.aspx" Text="Home" /></li>
+                                    
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Services <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#"><span class="glyphicon glyphicon-triangle-right"></span>Photography</a></li>
+                                        <li><a href="#"><span class="glyphicon glyphicon-triangle-right"></span>Venue</a></li>
+                                        <li><a href="#"><span class="glyphicon glyphicon-triangle-right"></span>Decoration</a></li>
+                                        <li><a href="#"><span class="glyphicon glyphicon-triangle-right"></span>DJ</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <asp:HyperLink runat="server" NavigateUrl="#" Text="About us" /></li>
+                                <li>
+                                    <asp:HyperLink runat="server" NavigateUrl="~/ContactUs.aspx" Text="Contact us" /></li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li>
+                                    <asp:HyperLink NavigateUrl="~/UserRegistration.aspx" runat="server"><span class="glyphicon glyphicon-user"></span>&nbsp;Sign Up</asp:HyperLink></li>
+                                <li>
+                                    <asp:HyperLink NavigateUrl="~/Login.aspx" runat="server"><span class="glyphicon glyphicon-log-in"></span>&nbsp;Login</asp:HyperLink></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+
+        <div class="container-fluid" id="header">
+            <div class="row" style="background: url('Images/headerbg.jpg')">
+                <div class="col-md-6">
+                    <asp:HyperLink runat="server" NavigateUrl="~/Default.aspx">
+                    <asp:Image ImageUrl="~/Images/l2.png" CssClass="img-responsive" runat="server" BorderWidth="0" Width="400px" />
+                    </asp:HyperLink>
+                </div>
+                <div class="col-md-6">
+                    <asp:Image runat="server" CssClass="pull-right branch" ImageUrl="~/Images/tiny.png" />
+                </div>
+            </div>
+        </div>
+
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+
+
+        <asp:XmlDataSource ID="xds" DataFile="~/Menu.xml" XPath="/Items/MenuItem" runat="server"></asp:XmlDataSource>
+
+        <div class="container-fluid">
+            <div class="row bg-c2">
+                <div class="col-md-3 footer-col-1">
+                    <asp:Menu ID="Menu1" Width="100%" ForeColor="#eeeeee" CssClass="text-center" runat="server" DataSourceID="xds" StaticSubMenuIndent="16px">
+                        <DataBindings>
+                            <asp:MenuItemBinding DataMember="MenuItem"
+                                NavigateUrlField="NavigateUrl" TextField="Text" />
+
+                        </DataBindings>
+                    </asp:Menu>
+                </div>
+                <div class="col-md-3 text-c3">
+                    <p>Column</p>
+                </div>
+                <div class="col-md-3 text-c3">
+                    <p>Column</p>
+                </div>
+                <div class="col-md-3 text-c3">
+                    <p>Column</p>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container-fluid bg-cf">
+            <div class="container inner">
+                <div class="row">
+                    <div class="col-md-12 text-center text-c3">
+                        <p>All Right Reserved &copy; 2018</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </form>
+</body>
+</html>

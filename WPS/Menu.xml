@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Items>
+  <MenuItem NavigateUrl="~/Default.aspx" Text="Home"/>
+  <MenuItem NavigateUrl="~/ContactUs.aspx" Text="Contact us" />
+  <MenuItem NavigateUrl="~/Login.aspx" Text="Login" />
+  <MenuItem NavigateUrl="~/UserRegistration.aspx" Text="User Registration" />
+  <MenuItem NavigateUrl="~/VendorRegistration.aspx" Text="Vendor Registration" />
+  <MenuItem NavigateUrl="~/admin/ManageUser.aspx" Text="Manage User" />
+  <MenuItem NavigateUrl="~/user/Default.aspx" Text="User Home" />
+  <!--<MenuItem NavigateUrl="~/user/Default.aspx" Text="User Home" />
+  <MenuItem NavigateUrl="~/user/Default.aspx" Text="User Home" />-->
+
+</Items>

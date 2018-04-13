@@ -1,0 +1,118 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="User.master.cs" Inherits="WPS.user.User" %>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <%--<link rel="stylesheet" href="Bootstrap/bootstrap.min.css" />
+    <script src="Bootstrap/jquery.min.js"></script>
+    <script src="Bootstrap/bootstrap.min.js"></script>--%>
+
+    <link rel="stylesheet" href="../CSS/NavStyle.css" type="text/css" />
+
+    <style type="text/css">
+        /*
+            Master Color = #f05759
+            Container Color = #eeeeee
+        */
+        body {
+            background-color: #eeeeee;
+        }
+        /* Remove the navbar's default margin-bottom and rounded borders */
+        .navbar {
+            margin-bottom: 0;
+            border-radius: 0;
+        }
+       
+    </style>
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div class="container-fluid">
+            <div class="row" style="background-color: #f7ebe8;">
+                <div class="col-md-6">
+                    <asp:HyperLink runat="server" NavigateUrl="~/Default.aspx">
+                    <asp:Image ImageUrl="~/Images/l2.png" CssClass="img-responsive" runat="server" BorderWidth="0" Width="400px" />
+                    </asp:HyperLink>
+                </div>
+                <div class="col-md-6">
+                    <asp:HyperLink ID="id_userstatus" Text="Welcome, Tabeena" runat="server" CssClass="pull-right"></asp:HyperLink>
+                </div>
+            </div>
+
+            <div class="row">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="Default.aspx">
+                                <span class="glyphicon glyphicon-heart"></span>
+                                &nbsp;WedLock&nbsp;
+                                <span class="glyphicon glyphicon-heart"></span>
+                            </a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="myNavbar">
+                            <ul class="nav navbar-nav">
+                                <li class="active">
+                                    <asp:HyperLink runat="server" NavigateUrl="~/Default.aspx" Text="Home" /></li>
+
+                                <li class="dropdown">
+                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Services <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#"><span class="glyphicon glyphicon-triangle-right"></span>Photography</a></li>
+                                        <li><a href="#"><span class="glyphicon glyphicon-triangle-right"></span>Venue</a></li>
+                                        <li><a href="#"><span class="glyphicon glyphicon-triangle-right"></span>Decoration</a></li>
+                                        <li><a href="#"><span class="glyphicon glyphicon-triangle-right"></span>DJ</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <asp:HyperLink runat="server" NavigateUrl="#" Text="About us" /></li>
+                                <li>
+                                    <asp:HyperLink runat="server" NavigateUrl="~/ContactUs.aspx" Text="Contact us" /></li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li>
+                                    <asp:HyperLink NavigateUrl="~/UserRegistration.aspx" runat="server"><span class="glyphicon glyphicon-user"></span>&nbsp;Settings</asp:HyperLink></li>
+                                <li>
+                                    <asp:LinkButton runat="server" OnClick="logout" Text="Logout"></asp:LinkButton>
+                                    <%--<asp:HyperLink NavigateUrl="~/Login.aspx" runat="server"><span class="glyphicon glyphicon-log-in"></span>&nbsp;Logout</asp:HyperLink>--%></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+
+        <div class="row">
+            <div class="panel-footer text-center">
+                <p>All Right Reserved &copy; 2018</p>
+                <br />
+                <asp:XmlDataSource ID="xds" DataFile="~/Menu.xml" XPath="/Items/MenuItem" runat="server"></asp:XmlDataSource>
+                <asp:Menu ID="Menu1" runat="server" DataSourceID="xds">
+                    <DataBindings>
+                        <asp:MenuItemBinding DataMember="MenuItem"
+                            NavigateUrlField="NavigateUrl" TextField="Text" />
+                    </DataBindings>
+                </asp:Menu>
+            </div>
+        </div>
+
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,93 @@
+﻿/*
+            Master Color = #f05759
+            Container Color = #eeeeee
+            #f7ebe8 light pink
+            #444140 light black
+       */
+body {
+    /*background-color: #eeeeee;*/
+    background-color: #f7ebe8;
+}
+.logo-small{
+    height:53px;
+    /*border:1px solid black;*/
+
+}
+.font-master {
+    font-family: 'Raleway', sans-serif;
+    /*font-family: 'Dancing Script', cursive;*/
+}
+
+.navbar-default {
+    font-family: 'Raleway', sans-serif;
+}
+
+.branch{
+    width:70%;
+}
+
+.text-c2 {
+    color: #eeeeee;
+}
+
+.text-c1 {
+    color: #f05759;
+}
+
+text-c3 {
+    color: #444140;
+}
+
+.bg-c1 {
+    background-color: #f05759;
+}
+
+.bg-c2 {
+    background-color: #eeeeee;
+}
+
+.bg-c3 {
+    background-color: #444140;
+}
+
+
+.bg-cf {
+    background-color: #e5e5e5;
+}
+
+.metro {
+    border-radius: 5px;
+    display: inline-block;
+    padding: 10px;
+    margin: 10px;
+    background: #f05759;
+    border-width: 0px;
+    /* Font styles */
+    color: #eeeeee;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+    .metro:hover {
+        /*background-color: #f7a1a3;*/
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+
+.metro-custom {
+    border-radius: 5px;
+    display: inline-block;
+    padding: 10px;
+    margin: 10px;
+    background: #444140;
+    border: 1px solid #eeeeee;
+    /* Font styles */
+    color: #eeeeee;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+    .metro-custom :hover {
+        /*background-color: #f7a1a3;*/
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }

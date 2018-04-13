@@ -1,0 +1,123 @@
+﻿/* Remove the navbar's default margin-bottom and rounded borders */
+.navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+}
+
+/* navbar */
+.navbar-default {
+    background-color: #f05759;
+    border-color: #f05759;
+}
+    /* Title */
+    .navbar-default .navbar-brand {
+        /*color: #777;*/
+        color: #eeeeee;
+    }
+
+        .navbar-default .navbar-brand:hover,
+        .navbar-default .navbar-brand:focus {
+            /*color: #5E5E5E;*/
+            color: #eeeeee;
+        }
+    /* Link */
+    .navbar-default .navbar-nav > li > a {
+        /*color: #777;*/
+        color: #eeeeee;
+        transition: border-radius 1s, color 0.5s, background-color 0.5s;
+    }
+
+    .navbar-default .navbar-nav > li {
+        margin: 1px 2px 1px 2px;
+    }
+
+        .navbar-default .navbar-nav > li > a:hover,
+        .navbar-default .navbar-nav > li > a:focus {
+            color: white;
+            background-color: #f7a1a3;
+            border-radius: 5px;
+        }
+
+    .navbar-default .navbar-nav > .active > a,
+    .navbar-default .navbar-nav > .active > a:hover,
+    .navbar-default .navbar-nav > .active > a:focus {
+        color: #eeeeee;
+        background-color: #f7a1a3;
+        border-radius: 5px;
+    }
+
+    .navbar-default .navbar-nav > .open > a,
+    .navbar-default .navbar-nav > .open > a:hover,
+    .navbar-default .navbar-nav > .open > a:focus {
+        color: #eeeeee;
+        background-color: #f7a1a3;
+        border-radius: 5px;
+    }
+    /*My Code Start*/
+    .navbar-default .navbar-nav > .dropdown > ul {
+        background-color: #f05759;
+    }
+
+    .navbar-default .navbar-nav > .dropdown li a {
+        color: #eeeeee;
+    }
+
+        .navbar-default .navbar-nav > .dropdown li a:hover,
+        .navbar-default .navbar-nav > .dropdown li a:focus {
+            color: #eeeeee;
+            background-color: #f7a1a3;
+            border-radius: 5px;
+        }
+    /*My Code End*/
+
+    /* Caret */
+    .navbar-default .navbar-nav > .dropdown > a .caret {
+        /*border-top-color: #777;
+    border-bottom-color: #777;*/
+        border-top-color: #eeeeee;
+        border-bottom-color: #eeeeee;
+    }
+
+
+    .navbar-default .navbar-nav > .dropdown > a:hover .caret,
+    .navbar-default .navbar-nav > .dropdown > a:focus .caret {
+        /*border-top-color: #777;
+    border-bottom-color: #777;*/
+        border-top-color: #eeeeee;
+        border-bottom-color: #eeeeee;
+    }
+
+    .navbar-default .navbar-nav > .open > a .caret,
+    .navbar-default .navbar-nav > .open > a:hover .caret,
+    .navbar-default .navbar-nav > .open > a:focus .caret {
+        /*border-top-color: #777;
+    border-bottom-color: #777;*/
+        border-top-color: #eeeeee;
+        border-bottom-color: #eeeeee;
+    }
+    /* Mobile version */
+    .navbar-default .navbar-toggle {
+        border-color: #DDD;
+    }
+
+        .navbar-default .navbar-toggle:hover,
+        .navbar-default .navbar-toggle:focus {
+            background-color: #DDD;
+        }
+
+        .navbar-default .navbar-toggle .icon-bar {
+            background-color: #CCC;
+        }
+
+@media (max-width: 767px) {
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+        color: #eeeeee;
+    }
+
+        .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+        .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+            color: #eeeeee;
+            background-color: #f7a1a3;
+            border-radius: 5px;
+        }
+}
